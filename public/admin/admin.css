@@ -1,0 +1,35 @@
+body{background-image:none}
+body::before,body::after{display:none}
+.login{max-width:420px;padding-top:14vh}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;padding:12px 4%;position:sticky;top:62px;z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+.tabs button{background:transparent;border:1px solid var(--line);color:var(--text);padding:9px 14px;font:700 .85rem "JetBrains Mono",monospace;cursor:pointer}
+.tabs button.on{border-color:var(--g);color:var(--g)}
+.tab{display:none;padding:22px 0 90px}.tab.on{display:block}
+.card{background:var(--panel);border:1px solid var(--line);padding:18px;margin-bottom:16px}
+.cardhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.f{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}.f label{color:var(--muted);font-size:.78rem}
+.app input:not([type=checkbox]),.app textarea,.app select,.login input{padding:10px 12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;width:100%}
+.app input[type=checkbox]{width:18px;height:18px;accent-color:var(--g)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.tools input,.tools select{width:auto!important}
+.chk{display:inline-flex;gap:8px;align-items:center;color:var(--muted);font-size:.88rem}
+.tablewrap{overflow-x:auto;margin:8px 0 12px}
+table.t{width:100%;border-collapse:collapse;min-width:640px}
+.t th{color:var(--muted);font-size:.78rem;text-align:left;padding:6px}
+.t td{padding:6px;border-bottom:1px dashed var(--line);vertical-align:top}
+.btn.danger{background:transparent;border-color:var(--r);color:var(--r)}
+.state{color:var(--muted);font-size:.85rem}.state.dirty{color:#ffd24a}.state.err{color:var(--r)}
+.err{color:var(--r)}
+.preview{max-width:220px;max-height:120px;object-fit:cover;border:1px solid var(--line);display:block;margin-top:6px}
+.help{color:var(--muted);font-size:.82rem;margin:0 0 12px}
+@media (max-width:700px){.grid2{grid-template-columns:1fr}}
+
+.product-photo-list{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.product-photo-list h4{margin:0 0 12px;color:var(--text);font-size:.95rem}
+.product-photo-editor{display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;align-items:center;padding:12px;margin:10px 0;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.product-photo-preview{height:105px;border:1px dashed var(--line);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;overflow:hidden;color:var(--muted)}
+.product-photo-preview .preview{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;margin:0;border:0}
+.product-photo-preview span{font-size:1.8rem}.product-photo-preview small{font-size:.7rem}
+.product-photo-controls{min-width:0;display:flex;flex-direction:column;gap:7px}.product-photo-controls label{font-size:.76rem;color:var(--muted)}.product-photo-controls input[type=file]{max-width:100%;font-size:.8rem}
+@media(max-width:560px){.product-photo-editor{grid-template-columns:105px minmax(0,1fr);gap:10px;padding:9px}.product-photo-preview{height:90px}}
