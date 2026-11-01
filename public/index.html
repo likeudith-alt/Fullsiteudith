@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UDITH STORE | Games and Digital Items</title>
+<meta name="description" content="UDITH STORE: Game top-ups and digital items. Order on WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="UDITH STORE">
+<meta property="og:description" content="Order on WhatsApp. You pay only after we confirm stock and price.">
+<meta name="theme-color" content="#080018">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎮%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<canvas id="live-bg" aria-hidden="true"></canvas>
+<header><div class="wrap"><button class="logo" id="logo" data-go="home" aria-label="Home">UDITH STORE</button><div class="hdr"><button class="btn line sm" id="accountBtn" type="button">My account</button><a class="btn sm" id="navWa" target="_blank" rel="noopener">WhatsApp</a></div></div></header>
+
+<main>
+<div class="view on" id="v-home">
+<div class="hero"><canvas id="rain" aria-hidden="true"></canvas><div class="wrap">
+<div><h1 id="hTitle"><b>UDITH</b> STORE</h1><p id="hText"></p></div>
+<div class="term" aria-label="Terminal"><div class="term-bar"><i></i><i></i><i></i>&nbsp;<span id="termName">udith-store@lk:~</span></div><pre id="tty"></pre></div>
+</div></div>
+<div class="tick" aria-hidden="true"><div id="ticker"></div></div>
+<section style="padding-bottom:0"><div class="wrap"><div class="strip"><div><b id="sIds">-</b><span>Rare IDs listed</span></div><div><b id="sPlans">-</b><span>Plans and services</span></div><div><b id="sFrom">-</b><span>Plans start from</span></div><div><b>WhatsApp</b><span>Orders and support</span></div></div><div class="banner" id="banner"></div></div></section>
+<section style="padding-bottom:0"><div class="wrap" id="adsBanner"></div></section>
+<section><div class="wrap"><div class="head"><h2>Choose a category</h2></div><div class="bar"><input id="hs" type="search" placeholder="Search plans, or type an ID number and press Enter" aria-label="Search plans or IDs"></div><div class="tiles" id="tiles"><p class="mu" id="loading">Loading…</p></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="head"><h2>How ordering works</h2></div><div class="steps"><div class="step"><b>STEP 1</b><h3>Pick a category</h3><p>Open a category such as Likes, Glory Bots or Rare IDs.</p></div><div class="step"><b>STEP 2</b><h3>Add or order</h3><p>Add items to your cart or order a single plan.</p></div><div class="step"><b>STEP 3</b><h3>Pay after confirm</h3><p>We confirm details, then you pay using one of our payment methods.</p></div><div class="step"><b>STEP 4</b><h3>Get delivered</h3><p>Send your slip and we deliver on WhatsApp.</p></div></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="head"><h2>Buy safely</h2></div><div class="safe" id="safeGrid"></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="head"><h2>Why UDITH STORE</h2></div><div class="safe"><div class="box"><h3>💬 WhatsApp first</h3><p class="mu">Sign in with your WhatsApp number and contact us directly.</p></div><div class="box"><h3>💰 Clear prices</h3><p class="mu">Plans show their price up front. Rare IDs show a price when one is set, or you can ask.</p></div><div class="box"><h3>🛡️ Pay after we confirm</h3><p class="mu">We confirm stock and details first. Then you pay.</p></div><div class="box"><h3>✦ Big ID collection</h3><p class="mu">Search, filter by pattern and save your favourite rare IDs.</p></div></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="box"><h3>Track your order</h3><p class="mu">Enter your Order ID (like UDS-261028-K7QD) and we’ll check it on WhatsApp.</p><div class="bar" style="margin:12px 0 0"><input id="trackId" placeholder="Order ID" aria-label="Order ID"><button class="btn sm" id="trackBtn">Check status</button></div></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="cta-band"><div><h2>Ready to order?</h2><p>Message us on WhatsApp and we’ll reply with the details.</p><div class="num" id="ctaNum"></div></div><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" id="ctaWa" target="_blank" rel="noopener">Chat on WhatsApp</a><button class="btn line" id="copyNum">Copy number</button></div></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="head"><h2>FAQ</h2></div><div id="faqList"></div></div></section>
+</div>
+
+<div id="views"></div>
+
+<!-- FREE LIKES: direct request, no player login -->
+<div class="view" id="v-free-likes">
+  <div class="wrap">
+    <button class="btn line sm back" data-go="home">← All games</button>
+    <div class="head"><h2>🎁 Free Likes Request</h2><p>Enter your Free Fire UID and send your request directly. No separate Free Likes account needed.</p></div>
+    <div class="box">
+      <form id="flRequestForm">
+        <label for="flUid">Free Fire UID</label>
+        <div class="bar"><input id="flUid" type="text" inputmode="numeric" pattern="[0-9]{5,20}" maxlength="20" placeholder="Enter your Free Fire UID" required><button class="btn sm" type="submit">Send Request →</button></div>
+      </form>
+      <p class="note" id="flMessage" role="status" aria-live="polite"></p>
+      <p class="help">Your request will be sent to the store admin for review. Please save the request ID shown after submission.</p>
+    </div>
+  </div>
+</div>
+<!-- END FREE LIKES REQUEST SECTION -->
+
+<div class="view" id="v-ids"><div class="wrap">
+<button class="btn line sm back" data-go="home">← All categories</button>
+<div class="head"><h2>Rare Free Fire IDs</h2><p>Search the list, then message us to confirm availability and price.</p></div>
+<div class="bar"><input id="q" type="search" placeholder="Search by ID number" aria-label="Search IDs"><select id="sort" aria-label="Sort"><option value="">Default order</option><option value="asc">ID: low to high</option><option value="desc">ID: high to low</option><option value="price">Price: low to high</option></select><select id="pre" aria-label="Series"><option value="">All series</option></select></div>
+<div class="chips" id="chips"></div><p class="note" id="cnt"></p><div class="ids" id="idGrid"></div><button class="btn line more" id="more" hidden>Show more</button>
+<div class="box" style="margin-top:22px"><h3>Can’t find your lucky number?</h3><p class="mu">Tell us the ID or pattern you want and we’ll look for it.</p><div class="bar" style="margin:0"><input id="reqId" inputmode="numeric" placeholder="e.g. 1500000777" aria-label="ID you want"><button class="btn sm" id="reqBtn">Request this ID</button></div></div></div></div>
+
+<div class="view" id="v-pay"><div class="wrap">
+<button class="btn line sm back" data-go="home">← All categories</button>
+<div class="head"><h2>Payment methods</h2><p>Pay only after we confirm your order. Send the slip on WhatsApp.</p></div>
+<div class="pay" id="payGrid"></div>
+<a class="btn sm" id="slipWa" target="_blank" rel="noopener" style="margin-top:18px">Send payment slip</a></div></div>
+</main>
+
+<footer><div class="wrap"><div><strong style="color:var(--g)" id="footStore">UDITH_STORE</strong><br><span id="footText"></span></div><div><div class="chips" id="footChips" style="max-width:360px"></div></div><div>WhatsApp <span id="footNum"></span><br><a id="footWa" target="_blank" rel="noopener" style="text-decoration:underline">Start a chat</a></div></div></footer>
+<a class="btn fab" id="fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">☏</a>
+<button class="btn cartbtn" id="cartOpen" aria-label="Open cart">🛒 <span id="cartCount">0</span></button>
+<div class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Cart"><div class="dp"><div class="row"><h3>Your cart</h3><button class="copy" id="cartClose">close</button></div><div id="cartItems"></div><div class="note" id="cartTotal"></div><div class="bar" style="margin:12px 0 0"><input id="oName" placeholder="Your name" aria-label="Your name"><input id="oUid" placeholder="Free Fire UID or phone model" aria-label="Free Fire UID or phone model"><select id="oPay" aria-label="Payment method"></select></div><p class="note">Your order gets an Order ID and is sent to WhatsApp ready to confirm. This does not take payment.</p><button class="btn" id="checkout">Send order on WhatsApp</button><div id="orderHist"></div></div></div>
+<div class="drawer" id="adPopup" role="dialog" aria-modal="true" aria-label="Offer"><div class="dp"><div class="row"><b>Special offer</b><button class="copy" id="adClose">close</button></div><div id="adPopupBody"></div></div></div>
+<button class="btn totop" id="toTop" aria-label="Back to top" hidden>↑</button>
+<div class="customer-gate" id="customerGate" role="dialog" aria-modal="true" aria-labelledby="customerTitle">
+  <div class="customer-panel">
+    <div class="gate-brand">🎮 <b>UDITH STORE</b></div>
+    <h2 id="customerTitle">Welcome to UDITH STORE</h2>
+    <p class="mu">Sign in or create your store account with your WhatsApp number.</p>
+    <form id="customerForm">
+      <label for="customerPhone">WhatsApp number (with country code)</label>
+      <input id="customerPhone" type="tel" placeholder="+94722124765" autocomplete="tel" required>
+      <label for="customerPassword">Password</label>
+      <input id="customerPassword" type="password" placeholder="At least 8 characters" minlength="8" maxlength="128" autocomplete="current-password" required>
+      <div class="gate-actions"><button class="btn" type="submit" data-customer-action="login">Log in</button><button class="btn line" type="button" id="customerRegister">Create account</button></div>
+    </form>
+    <p id="customerMessage" role="status" class="note"></p>
+    <button type="button" class="gate-continue" id="guestContinue">Continue as guest</button>
+    <p class="help">Passwords are securely hashed on the server. Never reuse your banking or email password.</p>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/js/app.js"></script>
+</body>
+</html>
