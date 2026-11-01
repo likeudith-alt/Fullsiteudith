@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | UDITH STORE</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛠️%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<div id="login" class="wrap login">
+  <div class="box">
+    <h3>Admin login</h3>
+    <p class="help">Enter the admin password you set in Netlify (ADMIN_PASSWORD).</p>
+    <div class="f"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password"></div>
+    <button class="btn" id="loginBtn">Log in</button>
+    <p class="err" id="loginErr" role="alert"></p>
+  </div>
+</div>
+
+<div id="app" class="app" hidden>
+  <header><div class="wrap">
+    <span class="logo">UDITH<span>_ADMIN</span></span>
+    <div class="tools" style="margin:0">
+      <span class="state" id="state">Loaded</span>
+      <a class="btn line sm" href="/" target="_blank" rel="noopener">View site</a>
+      <button class="btn sm" id="saveBtn">Save changes</button>
+      <button class="btn line sm" id="logoutBtn">Log out</button>
+    </div>
+  </div></header>
+  <nav class="tabs" id="tabs">
+    <button data-tab="plans" class="on">Plans &amp; prices</button>
+    <button data-tab="ids">Rare IDs</button>
+    <button data-tab="free-likes">Free Likes requests</button>
+    <button data-tab="customers">Customer accounts</button>
+    <button data-tab="ads">Ads</button>
+    <button data-tab="pay">Payments</button>
+    <button data-tab="text">Site text</button>
+    <button data-tab="backup">Backup</button>
+  </nav>
+  <main class="wrap"><div id="tabBody" class="tab on"></div></main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/admin/admin.js"></script>
+</body>
+</html>
