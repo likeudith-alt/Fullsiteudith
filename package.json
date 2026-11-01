@@ -1,0 +1,13 @@
+{
+  "name": "udith-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "UDITH STORE – Free Fire store site with admin panel (Netlify Functions + Netlify Blobs)",
+  "scripts": {
+    "dev": "npx netlify-cli dev"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.2.0"
+  }
+}
